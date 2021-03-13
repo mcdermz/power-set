@@ -1,4 +1,4 @@
-function getStrategyPowerSet(strats) {
+function getPowerSet(strats) {
     var fn = function (active, rest, a) {
         if (!active && !rest.length)
             return;
@@ -31,48 +31,27 @@ function test(expected, actual) {
     }
 }
 
-// const strategies = ["a", "b", "c", "d"];
-
-// const expected = [
-//     "a,b,c,d",
-
-//     "a,b,c",
-//     "a,b,d",
-//     "a,c,d",
-//     "b,c,d",
-
-//     "a,b",
-//     "a,c",
-//     "a,d",
-//     "b,c",
-//     "b,d",
-//     "c,d",
-
-//     "a",
-//     "b",
-//     "c",
-//     "d",
-// ];
-const strategies = ["recently_viewed_snowplow_mvp", "also_carted_graph", "fbt_similar", "top_hits_site_wide"];
+const strategies = ["a", "b", "c", "d"];
 
 const expected = [
-    "also_carted_graph,fbt_similar,recently_viewed_snowplow_mvp,top_hits_site_wide",
+    "a,b,c,d",
 
-    "also_carted_graph,fbt_similar,recently_viewed_snowplow_mvp",
-    "also_carted_graph,fbt_similar,top_hits_site_wide",
-    "also_carted_graph,recently_viewed_snowplow_mvp,top_hits_site_wide",
-    "fbt_similar,recently_viewed_snowplow_mvp,top_hits_site_wide",
+    "a,b,c",
+    "a,b,d",
+    "a,c,d",
+    "b,c,d",
 
-    "also_carted_graph,fbt_similar",
-    "also_carted_graph,recently_viewed_snowplow_mvp",
-    "also_carted_graph,top_hits_site_wide",
-    "fbt_similar,recently_viewed_snowplow_mvp",
-    "fbt_similar,top_hits_site_wide",
-    "recently_viewed_snowplow_mvp,top_hits_site_wide",
+    "a,b",
+    "a,c",
+    "a,d",
+    "b,c",
+    "b,d",
+    "c,d",
 
-    "also_carted_graph",
-    "fbt_similar",
-    "recently_viewed_snowplow_mvp",
-    "top_hits_site_wide",
+    "a",
+    "b",
+    "c",
+    "d",
 ];
-test(expected, getStrategyPowerSet(strategies))
+
+test(expected, getPowerSet(strategies))
