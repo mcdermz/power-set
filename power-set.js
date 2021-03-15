@@ -1,3 +1,4 @@
+// this solution is derived from an answer in this thread: https://codereview.stackexchange.com/questions/7001/generating-all-combinations-of-an-array
 function getPowerSet(strats) {
     var fn = function (active, rest, a) {
         if (!active && !rest.length)
@@ -11,7 +12,7 @@ function getPowerSet(strats) {
         return a;
     }
     const results = fn("", strats, [])
-    console.log('results: ', results);
+
     return results;
 }
 
